@@ -1,0 +1,63 @@
+# 🟡 Gold Price Prediction using Machine Learning
+
+This project predicts gold prices using machine learning, particularly the **Random Forest Regressor** model. 
+It uses historical gold price data along with indicators like SPX, USO, SLV, and EUR/USD to build and evaluate a predictive model.
+
+---
+
+## 📌 Project Overview
+
+- 🧠 **Model Used**: Random Forest Regressor
+- 📈 **Target Variable**: `GLD` (Gold Price)
+- 📊 **Features**: SPX, USO, SLV, EUR/USD
+- 💬 **Evaluation Metric**: R² Score
+- 📁 **Dataset Source**: `gold_price_data.csv`
+
+---
+
+## 🔧 Technologies Used
+
+| Tool/Library         | Purpose                         |
+|----------------------|---------------------------------|
+| Python               | Core programming language       |
+| Pandas               | Data loading and manipulation   |
+| NumPy                | Numerical operations            |
+| Matplotlib & Seaborn | Data visualization              |
+| Scikit-learn         | Machine learning modeling       |
+| Jupyter Notebook     | Interactive environment         |
+
+---
+
+## 📁 Dataset Information
+
+The dataset contains 2290 rows and 6 columns:
+
+- `Date`: Timestamp (not used in modeling)
+- `SPX`: S&P 500 Index
+- `GLD`: Gold Price (Target)
+- `USO`: Crude Oil ETF Price
+- `SLV`: Silver ETF Price
+- `EUR/USD`: Forex Rate
+
+---
+
+## 📈 Workflow
+
+### 1. Data Preprocessing
+- Loaded CSV using Pandas
+- Checked for null values and data types
+- Removed the `Date` column for correlation & model training
+- Separated features (X) and target (Y)
+
+### 2. Data Visualization
+- Heatmap for correlation between variables
+- Distribution plot for GLD values
+
+### 3. Train/Test Split
+```python
+from sklearn.model_selection import train_test_split
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=2)
+
+ Achieved R² Score: 0.9890 — indicating excellent model performance.
+
+
